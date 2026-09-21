@@ -25,7 +25,7 @@ the `.xlsx` whenever it changes, so updating prices = uploading the new Excel.
 ```bash
 npm install
 cp .env.example .env
-npm start            # http://localhost:3004
+npm start            # http://localhost:8005
 ```
 
 Production (LAN server): `pm2 start ecosystem.config.cjs` (process `luxtronic-lianli-catalog`).

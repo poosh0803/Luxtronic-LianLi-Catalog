@@ -8,7 +8,7 @@ import catalogRoutes from './src/routes/catalog.js';
 dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PORT = process.env.PORT || 3004;
+const PORT = process.env.PORT || 8005;
 // Folder that holds the price list Excel file(s). The newest .xlsx in it is the live one.
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(__dirname, 'data');
 
