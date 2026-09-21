@@ -1,0 +1,7 @@
+node_modules/
+.env
+logs/
+# Supplier price lists are uploaded through the site (or dropped into data/) -
+# they hold wholesale prices, so keep them out of git.
+data/*.xlsx
+!data/.gitkeep

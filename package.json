@@ -1,0 +1,17 @@
+{
+  "name": "luxtronic-lianli-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Searchable web catalog for the Lian Li price list Excel file (Encomtech Australia). No database - reads the .xlsx directly.",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "check": "node scripts/check-parse.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^4.21.2",
+    "read-excel-file": "^9.3.10"
+  }
+}

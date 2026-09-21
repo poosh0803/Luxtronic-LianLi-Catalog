@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lian Li Catalog - Luxtronic</title>
+  <link rel="icon" href="/images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo-container" href="/">
+      <img class="logo-img" src="/images/logo.png" alt="Luxtronic">
+      <span class="brand-name">Luxtronic</span>
+      <span class="tagline">Lian Li Catalog</span>
+    </a>
+    <div class="dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></div>
+  </header>
+  <nav class="nav-bar">
+    <a class="nav-item" href="/"><i class="fas fa-table-list"></i> Catalog</a>
+    <a class="nav-item" href="/price-list"><i class="fas fa-file-excel"></i> Price List</a>
+  </nav>
+
+  <main>
+    <h1>Lian Li Catalog</h1>
+    <p class="subtitle" id="listInfo">Loading price list...</p>
+
+    <div id="alerts"></div>
+
+    <div class="panel" id="controls" style="display:none">
+      <div class="search-box" id="searchBox">
+        <i class="fas fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search model, description or EAN - e.g. o11 mini white, 360 aio, 1000w" autocomplete="off" spellcheck="false" autofocus>
+        <span class="search-hint">/</span>
+        <button type="button" class="search-clear" id="searchClear" title="Clear search (Esc)"><i class="fas fa-xmark"></i> Clear</button>
+      </div>
+
+      <div class="filter-row" id="categoryChips"></div>
+
+      <div class="filter-selects">
+        <div><label for="stockFilter">Availability</label>
+          <select id="stockFilter">
+            <option value="">All</option>
+            <option value="in-stock">In stock</option>
+            <option value="incoming">Incoming (ETA)</option>
+            <option value="unknown">Not stated</option>
+          </select></div>
+        <div><label for="colorFilter">Colour</label>
+          <select id="colorFilter"><option value="">All</option></select></div>
+        <div><label for="sortSelect">Sort by</label>
+          <select id="sortSelect">
+            <option value="relevance">Best match</option>
+            <option value="price-asc">Price EX: low to high</option>
+            <option value="price-desc">Price EX: high to low</option>
+            <option value="model">Model A-Z</option>
+          </select></div>
+        <div class="spacer"></div>
+        <span class="result-line" id="resultLine"></span>
+        <button type="button" class="btn btn-sm" id="resetBtn" style="display:none"><i class="fas fa-rotate-left"></i> Reset</button>
+      </div>
+    </div>
+
+    <div class="panel" id="results" style="display:none">
+      <div class="table-wrap">
+        <table class="catalog">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Description</th>
+              <th>Availability</th>
+              <th class="num" title="Price excluding GST">Price EX</th>
+              <th class="num" title="Price including 10% GST">Price IN</th>
+              <th class="num" title="Recommended retail price">MSRP</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <div class="empty" id="noResults" style="display:none"></div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="detailOverlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" id="detailBox"></div>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/catalog.js"></script>
+</body>
+</html>

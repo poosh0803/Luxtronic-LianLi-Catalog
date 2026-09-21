@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price List - Lian Li Catalog</title>
+  <link rel="icon" href="/images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo-container" href="/">
+      <img class="logo-img" src="/images/logo.png" alt="Luxtronic">
+      <span class="brand-name">Luxtronic</span>
+      <span class="tagline">Lian Li Catalog</span>
+    </a>
+    <div class="dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></div>
+  </header>
+  <nav class="nav-bar">
+    <a class="nav-item" href="/"><i class="fas fa-table-list"></i> Catalog</a>
+    <a class="nav-item" href="/price-list"><i class="fas fa-file-excel"></i> Price List</a>
+  </nav>
+
+  <main>
+    <h1>Price List</h1>
+    <p class="subtitle">The catalog reads straight from the Excel file. Upload a new one here and the site updates immediately - there is no database.</p>
+
+    <div id="pageAlerts"></div>
+
+    <div class="panel">
+      <h2>Current Excel file</h2>
+      <div id="currentInfo"><div class="empty">Loading...</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>Upload a new price list</h2>
+      <div class="dropzone" id="dropzone" tabindex="0">
+        <i class="fas fa-cloud-arrow-up"></i>
+        <strong>Drop the new .xlsx here</strong> or click to choose a file
+        <div style="font-size:12px;margin-top:6px">The file is checked first. If it is not a valid Lian Li price list it is rejected and the current list stays live. Older files are kept.</div>
+      </div>
+      <input type="file" id="fileInput" accept=".xlsx" style="display:none">
+      <div id="uploadStatus" style="margin-top:14px"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Things to check in the Excel</h2>
+      <div id="warnings"><div class="empty">Loading...</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>Files on the server</h2>
+      <div id="fileList"><div class="empty">Loading...</div></div>
+    </div>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/price-list.js"></script>
+</body>
+</html>
